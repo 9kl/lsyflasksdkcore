@@ -52,7 +52,7 @@ python -m twine upload --repository testpypi dist/*
 
 测试安装：
 ```bash
-pip install --index-url https://test.pypi.org/simple/ lsyflasksdkcore
+pip install --index-url https://test.pypi.org/simple/ lsyflasksdkcore_v0
 ```
 
 ## 5. 正式上传
@@ -64,7 +64,7 @@ python -m twine upload dist/*
 ## 6. 验证安装
 
 ```bash
-pip install lsyflasksdkcore
+pip install lsyflasksdkcore_v0
 ```
 
 ## 版本管理

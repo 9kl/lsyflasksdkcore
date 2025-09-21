@@ -1,4 +1,4 @@
-# lsyflasksdkcore
+# lsyflasksdkcore_v0
 
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](LICENSE)
@@ -18,7 +18,7 @@
 ## 安装
 
 ```bash
-pip install lsyflasksdkcore
+pip install lsyflasksdkcore_v0
 ```
 
 或者从源码安装：

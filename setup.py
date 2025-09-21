@@ -22,7 +22,7 @@ if os.path.exists(license_path):
         license_text = fh.read()
 
 setup(
-    name="lsyflasksdkcore",
+    name="lsyflasksdkcore_v0",
     version="1.0.0",
     author="fhp",
     author_email="chinafengheping@outlook.com",
