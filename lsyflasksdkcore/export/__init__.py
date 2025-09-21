@@ -1,10 +1,10 @@
-from lsyflasksdkcore.export.csv import CvsResponse
+from lsyflasksdkcore.export.csv import CsvResponse
 from lsyflasksdkcore.export.xls import XlsResponse
 
-cvs = CvsResponse()
+csv = CsvResponse()
 xls = XlsResponse()
 
 
 def init_excel(app):
-    cvs.init_app(app)
+    csv.init_app(app)
     xls.init_app(app)

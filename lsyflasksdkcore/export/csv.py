@@ -56,7 +56,7 @@ def export_xls(output_file_name, head_cols, data_rows):
     return resp
 
 
-class CvsResponse(object):
+class CsvResponse(object):
     def __init__(self, app=None):
         self.app = app
         if app is not None:
@@ -67,8 +67,8 @@ class CvsResponse(object):
             self.app = app
 
     def response(self, output_filename: str, row_hander: typing.Callable = None):
-        def _cvsresponse(fn):
-            def __cvsresponse(*args, **kwargs):
+        def _csvresponse(fn):
+            def __csvresponse(*args, **kwargs):
                 response = fn(*args, **kwargs)
                 if request.content_type == "application/excel":
                     try:
@@ -95,6 +95,6 @@ class CvsResponse(object):
 
                 return response
 
-            return __cvsresponse
+            return __csvresponse
 
-        return _cvsresponse
+        return _csvresponse

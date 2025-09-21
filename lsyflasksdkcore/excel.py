@@ -27,9 +27,7 @@ def _get_content_style():
 
 
 def _get_title_style():
-    style = xlwt.easyxf(
-        "font: bold 1, colour_index 0, height 350; align: wrap on, vert center, horz center"
-    )
+    style = xlwt.easyxf("font: bold 1, colour_index 0, height 350; align: wrap on, vert center, horz center")
     return style
 
 
@@ -91,9 +89,7 @@ def export_xls(output_file_name, head_cols, data_rows):
     return resp
 
 
-def export_temp_xls(
-    out_filename, temp_filename, data, start_row=2, start_col=0, sheet_index=0
-):
+def export_temp_xls(out_filename, temp_filename, data, start_row=2, start_col=0, sheet_index=0):
     """
     根据模板导入到xls
     :param out_filename: 输出文件
@@ -108,11 +104,7 @@ def export_temp_xls(
         config = current_app.config
         excel_template_path = config.get("EXCEL_TEMPLATE_PATH")
 
-        path = (
-            os.path.join(excel_template_path, temp_filename)
-            .replace("\\", "/")
-            .replace("//", "/")
-        )
+        path = os.path.join(excel_template_path, temp_filename).replace("\\", "/").replace("//", "/")
         rb = xlrd.open_workbook(path, formatting_info=True)
         wb = copy(rb)
 
@@ -185,10 +177,10 @@ def excelresponse(schema_class: Type[Schema], to_excel: Callable):
     return _excelresponse
 
 
-def cvsresponse(output_filename):
-    def _cvsresponse(fn):
+def csvresponse(output_filename):
+    def _csvresponse(fn):
         @functools.wraps(fn)
-        def __cvsresponse(*args, **kwargs):
+        def __csvresponse(*args, **kwargs):
             response = fn(*args, **kwargs)
             if request.content_type == "application/excel":
                 lst = response.json.get("data", None)
@@ -210,6 +202,6 @@ def cvsresponse(output_filename):
 
             return response
 
-        return __cvsresponse
+        return __csvresponse
 
-    return _cvsresponse
+    return _csvresponse

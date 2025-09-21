@@ -23,7 +23,7 @@ if os.path.exists(license_path):
 
 setup(
     name="lsyflasksdkcore_v0",
-    version="1.0.0",
+    version="1.0.1",
     author="fhp",
     author_email="chinafengheping@outlook.com",
     description="领数云flask SDK核心库（https://github.com/9kl/lsyflasksdkcore）",
